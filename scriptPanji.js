@@ -22,3 +22,6 @@ function addTheAnsw(){
 		})   
 	});	
 }
+setTimeout(function (){
+	addTheAnsw()
+},3000)
