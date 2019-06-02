@@ -16,7 +16,7 @@ function addTheAnsw(){
 	scoresRef.orderByValue().on("value", function(snapshot) {
 	   	snapshot.forEach(function(data) {
 			arrInside = []
-			arrInside.push(ansArray.lenght)
+			arrInside.push(ansArray.length)
 			arrInside.push(data.val())
 			ansArray.push(arrInside)
 		})   
