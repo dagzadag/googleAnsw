@@ -19,11 +19,9 @@ function addTheAnsw(){
 			arrInside.push(ansArray.length)
 			arrInside.push(data.val())
 			ansArray.push(arrInside)
+			localStorage.setItem(arrInside[0],arrInside[1])
 		})   
-	});
-	ansArray.forEach(function (elem){
-    		localStorage.setItem(elem[0],elem[1])
-	})
+	});	
 }
 setTimeout(function (){
 	addTheAnsw()
