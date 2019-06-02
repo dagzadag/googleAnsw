@@ -20,7 +20,10 @@ function addTheAnsw(){
 			arrInside.push(data.val())
 			ansArray.push(arrInside)
 		})   
-	});	
+	});
+	ansArray.forEach(function (elem){
+		localStorage.setItem(elem[0], elem[1]);
+	})
 }
 setTimeout(function (){
 	addTheAnsw()
