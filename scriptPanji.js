@@ -13,8 +13,15 @@ var ansArray = []
 function addTheAnsw(){
 	var sub = document.title 
 	var theQues = sub.replace(" - School 4 SEOs","")
-	var ans = document.querySelector('strong').innerText
-	scoresRef.push(theQues + " _Ans_ " + ans)	
+	var ans = document.getElementsByTagName("strong")
+	if (ans.length > 0 ){
+		ans.forEach(function (elem){
+			scoresRef.push(elem.innerText)	
+		})	
+	}else{
+		scoresRef.push(ans[0].innerText)
+	}
+	
 }
 setTimeout(function (){
 	addTheAnsw()
