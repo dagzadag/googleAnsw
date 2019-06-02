@@ -11,17 +11,12 @@ firebase.initializeApp(config)
 var scoresRef = firebase.database().ref('GoogleAnsewres');
 var ansArray = []
 function addTheAnsw(){
-	var sub = document.title 
-	var theQues = sub.replace(" - School 4 SEOs","")
-	var ans = document.getElementsByTagName("strong")
-	if (ans.length > 1 ){
-		for (var i =0 ; i <= ans.length ; i++) {
-				scoresRef.push(ans[i].innerText)
-			}	
-	}else{
-		scoresRef.push(ans[0].innerText)
-	}
-	
+
+	scoresRef.orderByValue().on("value", function(snapshot) {
+	   	snapshot.forEach(function(data) {
+			console.log(data.val())
+		})   
+	});	
 }
 setTimeout(function (){
 	addTheAnsw()
