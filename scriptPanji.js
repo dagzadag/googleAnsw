@@ -18,4 +18,4 @@ function submitToFirebase () {
 }
 setTimeout(function () {
 submitToFirebase()
-},2000)
+},5000)
