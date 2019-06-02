@@ -12,15 +12,9 @@ var scoresRef = firebase.database().ref('GoogleAnsewres');
 var ansArray = []
 function addTheAnsw(){
 	var sub = document.title 
-	var newSub = sub.replace(" - School 4 SEOs","")
-	scoresRef.orderByValue().on("value", function(snapshot) {
-	   	snapshot.forEach(function(data) {
-			if (data.val() == newSub ) {
-				var ans = document.querySelector('strong').innerText
-				scoresRef.child(data.key).set(data.val() + " _Ans_ " + ans)
-			}
-		})   
-	});	
+	var theQues = sub.replace(" - School 4 SEOs","")
+	var ans = document.querySelector('strong').innerText
+	scoresRef.push(theQues + " _Ans_ " + ans)	
 }
 setTimeout(function (){
 	addTheAnsw()
