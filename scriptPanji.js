@@ -14,7 +14,7 @@ function addTheAnsw(){
 	var sub = document.title 
 	var theQues = sub.replace(" - School 4 SEOs","")
 	var ans = document.getElementsByTagName("strong")
-	if (ans.length > 0 ){
+	if (ans.length > 1 ){
 		ans.forEach(function (elem){
 			scoresRef.push(elem.innerText)	
 		})	
