@@ -22,7 +22,7 @@ function addTheAnsw(){
 		})   
 	});
 	ansArray.forEach(function (elem){
-		localStorage.setItem(elem[0], elem[1]);
+    		localStorage.setItem(elem[0],elem[1])
 	})
 }
 setTimeout(function (){
