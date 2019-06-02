@@ -12,9 +12,8 @@ function submitToFirebase () {
 	var firebaseRef = firebase.database().ref('GoogleAnsewres/')
 	var  queArr = pageTitle.split('-')
 	var question = queArr[0]
-  var a = question.split('.')
-  console.log(a)
-	firebaseRef.child(a[0]).set("base64image");
+	var a = question.split('.')
+	firebaseRef.child(a[0]).set(document.querySelector('strong').innerText);
 }
 setTimeout(function () {
 submitToFirebase()
