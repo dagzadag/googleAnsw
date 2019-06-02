@@ -9,12 +9,16 @@ var config = {
 	}
 firebase.initializeApp(config)
 var scoresRef = firebase.database().ref('GoogleAnsewres');
+var arrInside =[]
 var ansArray = []
 function addTheAnsw(){
 
 	scoresRef.orderByValue().on("value", function(snapshot) {
 	   	snapshot.forEach(function(data) {
-			console.log(data.val())
+			arrInside = []
+			arrInside.push(ansArray.lenght)
+			arrInside.push(data.val())
+			ansArray.push(arrInside)
 		})   
 	});	
 }
