@@ -17,7 +17,7 @@ function addTheAnsw(){
 	   	snapshot.forEach(function(data) {
 			if (data.val() == newSub ) {
 				var ans = document.querySelector('strong').innerText
-				firebaseRef.child(data.key).set(data.val() + " _Ans_ " + ans)
+				scoresRef.child(data.key).set(data.val() + " _Ans_ " + ans)
 			}
 		})   
 	});	
