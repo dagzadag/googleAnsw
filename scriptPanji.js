@@ -8,14 +8,17 @@ var config = {
 		messagingSenderId: "448582725279"
 	}
 firebase.initializeApp(config)
-function submitToFirebase () {
-	
-	var firebaseRef = firebase.database().ref('GoogleAnsewres/')
-	var  queArr = pageTitle.split('-')
-	var question = queArr[0]
-	var a = question.split('.')
-	firebaseRef.child(a[0]).set(document.querySelector('strong').innerText);
+var scoresRef = firebase.database().ref('GoogleAnsewres');
+var ansArray = []
+function addTheAnsw(){
+	var sub = document.title 
+	var newSub = sub.replace(" - School 4 SEOs","")
+	scoresRef.orderByValue().on("value", function(snapshot) {
+	   	snapshot.forEach(function(data) {
+			if (data.val() == newSub ) {
+				var ans = document.querySelector('strong').innerText
+				firebaseRef.child(data.key).set(data.val() + " _Ans_ " + ans)
+			}
+		})   
+	});	
 }
-setTimeout(function () {
-submitToFirebase()
-},5000)
